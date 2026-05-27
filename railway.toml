@@ -1,5 +1,5 @@
 [deploy]
-startCommand = "python manage.py migrate && gunicorn corobimy.wsgi:application --bind 0.0.0.0:$PORT --workers 2"
+startCommand = "python manage.py migrate && gunicorn corobimy.wsgi:application --bind 0.0.0.0:$PORT --workers 2 --access-logfile -"
 healthcheckPath = "/admin/login/"
 healthcheckTimeout = 30
 
