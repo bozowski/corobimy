@@ -1,6 +1,6 @@
 # Repository Guidelines
 
-**corobimy** is a Django 6 web app for discovering Kraków attractions. Stack: Python + Django, `uv` package manager, SQLite in dev, PostgreSQL on Fly.io, GitHub Actions CI (auto-deploy-on-merge planned).
+**corobimy** is a Django 6 web app for discovering Kraków attractions. Stack: Python + Django, `uv` package manager, SQLite in dev, PostgreSQL on Railway, GitHub Actions CI (auto-deploy-on-merge planned). Live at `https://web-production-1188c.up.railway.app`.
 
 ## Hard Rules
 
@@ -23,7 +23,10 @@ New feature apps (e.g., `attractions/`, `accounts/`) land as sibling directories
 - `uv run python manage.py migrate` — run after every model change or git pull that includes a new migration
 - `uv run python manage.py makemigrations` — commit the generated file in the same PR as the model change
 - `uv run python manage.py test` — run test suite (no tests yet)
-- `uv run python manage.py createsuperuser` — create admin account for operator access
+- `uv run python manage.py createsuperuser` — create admin account locally (dev)
+- `railway run uv run python manage.py ...` — run management commands against Railway Postgres (note: `postgres.railway.internal` is only reachable inside Railway's private network; use `railway ssh --service web` for interactive commands or attach a public Postgres URL for local access)
+- `railway up --detach` — deploy from local to the `web` service on Railway
+- `railway logs` — tail runtime logs; `--build` for build logs
 
 ## Domain Model
 
