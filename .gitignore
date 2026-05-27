@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+.venv/
+
+# Local DB
+db.sqlite3
+
+# Environment secrets
+.env
+.env.local
+
+# Static collected files
+staticfiles/
+
+# OS
+.DS_Store
+Thumbs.db

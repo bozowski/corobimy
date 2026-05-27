@@ -1,0 +1,14 @@
+[project]
+name = "corobimy"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "django>=6.0.5",
+    "gunicorn>=23.0.0",
+    "psycopg[binary]>=3.2.0",
+    "dj-database-url>=2.3.0",
+    "whitenoise>=6.9.0",
+]
+
+[tool.uv]
+dev-dependencies = []

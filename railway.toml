@@ -1,0 +1,7 @@
+[deploy]
+startCommand = "gunicorn corobimy.wsgi:application --bind 0.0.0.0:$PORT --workers 2"
+healthcheckPath = "/"
+healthcheckTimeout = 30
+
+[build]
+builder = "RAILPACK"
