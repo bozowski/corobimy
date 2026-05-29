@@ -5,7 +5,21 @@
       "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\bozow\\\\Documents\\\\VSCode\\\\corobimy\\\\corobimy\" -Force | Select-Object Name, @{Name=\"Type\"; Expression={if\\($_.PSIsContainer\\){\"Dir\"}else{\"File\"}}} | Format-Table -AutoSize)",
       "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\bozow\\\\Documents\\\\VSCode\\\\corobimy\\\\corobimy\\\\context\" -Recurse -Force | Select-Object FullName | ForEach-Object { $_.FullName.Replace\\(\"C:\\\\Users\\\\bozow\\\\Documents\\\\VSCode\\\\corobimy\\\\corobimy\\\\\", \"\"\\) })",
       "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\bozow\\\\Documents\\\\VSCode\\\\corobimy\\\\corobimy\" -Recurse -Directory | Where-Object { $_.FullName -notmatch \"\\\\.venv|\\\\.git|__pycache__|\\\\.claude\" } | Select-Object FullName | ForEach-Object { $_.FullName.Replace\\(\"C:\\\\Users\\\\bozow\\\\Documents\\\\VSCode\\\\corobimy\\\\corobimy\\\\\", \"\"\\) } | Sort-Object)",
-      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\bozow\\\\Documents\\\\VSCode\\\\corobimy\\\\corobimy\" -Force | Where-Object { $_.Name -match '^\\\\.' } | Select-Object Name)"
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\bozow\\\\Documents\\\\VSCode\\\\corobimy\\\\corobimy\" -Force | Where-Object { $_.Name -match '^\\\\.' } | Select-Object Name)",
+      "Bash(uv --version)",
+      "PowerShell(uv *)",
+      "PowerShell(uv run *)",
+      "PowerShell(railway status *)",
+      "PowerShell(railway service *)",
+      "PowerShell(railway up *)",
+      "PowerShell(railway *)",
+      "PowerShell(railway add *)",
+      "PowerShell(railway variable *)",
+      "PowerShell(railway logs *)",
+      "PowerShell(railway deployment *)",
+      "PowerShell(railway run *)",
+      "PowerShell(railway domain *)",
+      "PowerShell($baseUrl = \"https://web-production-1188c.up.railway.app\"; $checks = @\\( @{url=\"$baseUrl/admin/login/\"; label=\"Admin login \\(7.1\\)\"}, @{url=\"$baseUrl/static/admin/css/base.css\"; label=\"Static files via WhiteNoise \\(7.3\\)\"}, @{url=\"$baseUrl/does-not-exist\"; label=\"Generic 404 - DEBUG=False \\(7.4\\)\"} \\); foreach \\($c in $checks\\) { try { $r = Invoke-WebRequest -Uri $c.url -UseBasicParsing -MaximumRedirection 5 -TimeoutSec 10; Write-Host \"$\\($c.label\\): $\\($r.StatusCode\\)\" } catch { Write-Host \"$\\($c.label\\): ERROR - $\\($_.Exception.Message\\)\" } })"
     ]
   }
 }
