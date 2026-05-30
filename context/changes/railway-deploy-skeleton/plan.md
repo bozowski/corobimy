@@ -204,9 +204,9 @@ LOGGING = {
 
 #### Manual
 
-- [ ] 1.5 After deploy, `curl https://web-production-1188c.up.railway.app/health/` returns `{"status": "ok"}` HTTP 200
-- [ ] 1.6 Railway dashboard health check shows green
-- [ ] 1.7 `/health/` returns 200 while logged out (no auth required)
+- [x] 1.5 After deploy, `curl https://web-production-1188c.up.railway.app/health/` returns `{"status": "ok"}` HTTP 200
+- [x] 1.6 Railway dashboard health check shows green
+- [x] 1.7 `/health/` returns 200 while logged out (no auth required)
 
 ### Phase 2: Error logging config
 
