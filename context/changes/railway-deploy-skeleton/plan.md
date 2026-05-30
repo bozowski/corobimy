@@ -204,18 +204,18 @@ LOGGING = {
 
 #### Manual
 
-- [x] 1.5 After deploy, `curl https://web-production-1188c.up.railway.app/health/` returns `{"status": "ok"}` HTTP 200
-- [x] 1.6 Railway dashboard health check shows green
-- [x] 1.7 `/health/` returns 200 while logged out (no auth required)
+- [x] 1.5 After deploy, `curl https://web-production-1188c.up.railway.app/health/` returns `{"status": "ok"}` HTTP 200 — 33161f9
+- [x] 1.6 Railway dashboard health check shows green — 33161f9
+- [x] 1.7 `/health/` returns 200 while logged out (no auth required) — 33161f9
 
 ### Phase 2: Error logging config
 
 #### Automated
 
-- [ ] 2.1 Django system check passes: `python manage.py check`
-- [ ] 2.2 Logging config loads without ImportError: `python manage.py shell -c "import logging; l = logging.getLogger('django'); l.warning('test'); print('ok')"`
+- [x] 2.1 Django system check passes: `python manage.py check`
+- [x] 2.2 Logging config loads without ImportError: `python manage.py shell -c "import logging; l = logging.getLogger('django'); l.warning('test'); print('ok')"`
 
 #### Manual
 
-- [ ] 2.3 After deploy, `railway logs` shows a WARNING entry after a 404 visit
-- [ ] 2.4 No DEBUG-level SQL traces visible in `railway logs`
+- [x] 2.3 After deploy, `railway logs` shows a WARNING entry after a 404 visit
+- [x] 2.4 No DEBUG-level SQL traces visible in `railway logs`
