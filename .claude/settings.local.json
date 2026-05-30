@@ -19,7 +19,15 @@
       "PowerShell(railway deployment *)",
       "PowerShell(railway run *)",
       "PowerShell(railway domain *)",
-      "PowerShell($baseUrl = \"https://web-production-1188c.up.railway.app\"; $checks = @\\( @{url=\"$baseUrl/admin/login/\"; label=\"Admin login \\(7.1\\)\"}, @{url=\"$baseUrl/static/admin/css/base.css\"; label=\"Static files via WhiteNoise \\(7.3\\)\"}, @{url=\"$baseUrl/does-not-exist\"; label=\"Generic 404 - DEBUG=False \\(7.4\\)\"} \\); foreach \\($c in $checks\\) { try { $r = Invoke-WebRequest -Uri $c.url -UseBasicParsing -MaximumRedirection 5 -TimeoutSec 10; Write-Host \"$\\($c.label\\): $\\($r.StatusCode\\)\" } catch { Write-Host \"$\\($c.label\\): ERROR - $\\($_.Exception.Message\\)\" } })"
+      "PowerShell($baseUrl = \"https://web-production-1188c.up.railway.app\"; $checks = @\\( @{url=\"$baseUrl/admin/login/\"; label=\"Admin login \\(7.1\\)\"}, @{url=\"$baseUrl/static/admin/css/base.css\"; label=\"Static files via WhiteNoise \\(7.3\\)\"}, @{url=\"$baseUrl/does-not-exist\"; label=\"Generic 404 - DEBUG=False \\(7.4\\)\"} \\); foreach \\($c in $checks\\) { try { $r = Invoke-WebRequest -Uri $c.url -UseBasicParsing -MaximumRedirection 5 -TimeoutSec 10; Write-Host \"$\\($c.label\\): $\\($r.StatusCode\\)\" } catch { Write-Host \"$\\($c.label\\): ERROR - $\\($_.Exception.Message\\)\" } })",
+      "PowerShell(Set-Clipboard *)",
+      "Bash(railway logs *)",
+      "Bash(railway run *)",
+      "Bash(railway up *)",
+      "Bash(.venv\\\\Scripts\\\\python.exe *)",
+      "PowerShell(.venv\\\\Scripts\\\\python.exe manage.py check 2>&1)",
+      "PowerShell(.venv\\\\Scripts\\\\python.exe manage.py shell -c \"import logging; l = logging.getLogger\\('django'\\); l.warning\\('test'\\); print\\('ok'\\)\" 2>&1)",
+      "mcp__linear-server__list_issue_statuses"
     ]
   }
 }
