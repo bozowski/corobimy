@@ -212,10 +212,10 @@ LOGGING = {
 
 #### Automated
 
-- [x] 2.1 Django system check passes: `python manage.py check`
-- [x] 2.2 Logging config loads without ImportError: `python manage.py shell -c "import logging; l = logging.getLogger('django'); l.warning('test'); print('ok')"`
+- [x] 2.1 Django system check passes: `python manage.py check` — 1722fd6
+- [x] 2.2 Logging config loads without ImportError: `python manage.py shell -c "import logging; l = logging.getLogger('django'); l.warning('test'); print('ok')"` — 1722fd6
 
 #### Manual
 
-- [x] 2.3 After deploy, `railway logs` shows a WARNING entry after a 404 visit
-- [x] 2.4 No DEBUG-level SQL traces visible in `railway logs`
+- [x] 2.3 After deploy, `railway logs` shows a WARNING entry after a 404 visit — 1722fd6
+- [x] 2.4 No DEBUG-level SQL traces visible in `railway logs` — 1722fd6
