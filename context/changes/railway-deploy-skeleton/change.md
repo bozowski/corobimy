@@ -1,9 +1,9 @@
 ---
 change_id: railway-deploy-skeleton
 title: Wire Railway deployment skeleton with Postgres, health check, and error logging
-status: implemented
+status: impl_reviewed
 created: 2026-05-30
-updated: 2026-05-30
+updated: 2026-05-31
 archived_at: null
 ---
 
