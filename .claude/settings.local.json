@@ -31,7 +31,9 @@
       "Bash(railway status *)",
       "mcp__exa__web_search_exa",
       "WebFetch(domain:django-filter.readthedocs.io)",
-      "WebFetch(domain:django-htmx.readthedocs.io)"
+      "WebFetch(domain:django-htmx.readthedocs.io)",
+      "Bash(git restore *)",
+      "Bash(uv run *)"
     ]
   }
 }
