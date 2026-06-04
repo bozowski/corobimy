@@ -683,10 +683,10 @@ Do not use `RunPython` in this migration. Seed data is loaded separately via `lo
 
 #### Automated
 
-- [x] 5.1 `uv run python manage.py test attractions` exits 0, all tests pass
-- [x] 5.2 No Django warnings in test output
+- [x] 5.1 `uv run python manage.py test attractions` exits 0, all tests pass — 9028047
+- [x] 5.2 No Django warnings in test output — 9028047
 
 #### Manual
 
-- [x] 5.3 Review test output — no skipped or errored tests
-- [x] 5.4 Load-more path confirmed using `cards_append.html` template
+- [x] 5.3 Review test output — no skipped or errored tests — 9028047
+- [x] 5.4 Load-more path confirmed using `cards_append.html` template — 9028047
