@@ -32,7 +32,7 @@ The north star — the smallest end-to-end slice whose delivery proves the produ
 | ID   | Change ID                 | Outcome (user can …)                                                                  | Prerequisites | PRD refs                       | Status   |
 |------|---------------------------|---------------------------------------------------------------------------------------|---------------|--------------------------------|----------|
 | F-01 | railway-deploy-skeleton   | (foundation) Django live on Railway, Postgres wired, /health/ endpoint, errors logged | —             | PRD §NFRs, PRD §Access Control | done     |
-| S-01 | attraction-browse-feed    | browse and filter Kraków attractions without signing in                               | F-01          | FR-003, FR-004                 | ready    |
+| S-01 | attraction-browse-feed    | browse and filter Kraków attractions without signing in                               | F-01          | FR-003, FR-004                 | in-progress |
 | S-02 | browse-first-save         | save an attraction; if anonymous, complete auth gate without losing the selection     | S-01          | FR-001, FR-002, FR-005, US-01  | proposed |
 | S-03 | operator-content-refresh  | (operator) manually trigger a refresh of Kraków attraction listings                   | S-01          | FR-009                         | blocked  |
 
@@ -84,7 +84,7 @@ What's already in place in the codebase as of 2026-05-29 (auto-researched + user
 - **Unknowns:**
   - Which persona (tourist or local) should the browse feed's default ordering and UX tone favor on day 1? — Owner: user. Block: no (PRD marks this non-blocking; both personas see the same feed, but copy and default sort order differ).
 - **Risk:** Sequenced before auth because the browse-first pattern (FR-004 Socrates note) lets anonymous users browse freely — building browse first means S-02 adds auth on top of a working feed rather than redesigning it. Main risk: seed data quality — thin or miscategorized initial corpus produces empty filtered states that make the app feel broken before real users arrive.
-- **Status:** proposed
+- **Status:** in-progress
 
 ### S-02: Browse-first save (auth gate)
 
@@ -117,7 +117,7 @@ What's already in place in the codebase as of 2026-05-29 (auto-researched + user
 | Roadmap ID | Change ID                | Suggested issue title                               | Ready for `/10x-plan` | Notes |
 |------------|--------------------------|-----------------------------------------------------|-----------------------|-------|
 | F-01       | railway-deploy-skeleton  | Wire Railway + Postgres, /health/ endpoint, logging | —                     | Done — archived via `/10x-archive` |
-| S-01       | attraction-browse-feed   | Browse and filter Kraków attractions (anonymous)    | yes                   | Run `/10x-plan attraction-browse-feed` |
+| S-01       | attraction-browse-feed   | Browse and filter Kraków attractions (anonymous)    | yes                   | In progress — `/10x-plan attraction-browse-feed` |
 | S-02       | browse-first-save        | Save attraction with browse-first auth gate         | no                    | Depends on S-01 |
 | S-03       | operator-content-refresh | Operator manual attraction data refresh             | no                    | Blocked — resolve content acquisition Unknown first |
 
