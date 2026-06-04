@@ -654,30 +654,30 @@ Do not use `RunPython` in this migration. Seed data is loaded separately via `lo
 
 #### Automated
 
-- [x] 3.1 `uv run python manage.py check` exits 0
-- [x] 3.2 `uv run python manage.py test attractions` exits 0
+- [x] 3.1 `uv run python manage.py check` exits 0 — ff47a2d
+- [x] 3.2 `uv run python manage.py test attractions` exits 0 — ff47a2d
 
 #### Manual
 
-- [x] 3.3 `GET /` returns HTTP 200 with full HTML
-- [x] 3.4 Category filter triggers HTMX XHR (not page reload), grid updates instantly
-- [x] 3.5 Load-more appends cards without replacing existing ones (test with 7+ attractions in admin)
-- [x] 3.6 No-JS fallback: `?category=family` URL produces correct filtered results
-- [x] 3.7 Empty state message appears when DB is empty
+- [x] 3.3 `GET /` returns HTTP 200 with full HTML — ff47a2d
+- [x] 3.4 Category filter triggers HTMX XHR (not page reload), grid updates instantly — ff47a2d
+- [x] 3.5 Load-more appends cards without replacing existing ones (test with 7+ attractions in admin) — ff47a2d
+- [x] 3.6 No-JS fallback: `?category=family` URL produces correct filtered results — ff47a2d
+- [x] 3.7 Empty state message appears when DB is empty — ff47a2d
 
 ### Phase 4: Seed Data
 
 #### Automated
 
-- [ ] 4.1 `uv run python manage.py loaddata initial_attractions` exits 0 with `Installed 12 object(s)`
-- [ ] 4.2 Shell query `Attraction.objects.count()` returns `12`
-- [ ] 4.3 All four category slugs present in DB
+- [x] 4.1 `uv run python manage.py loaddata initial_attractions` exits 0 with `Installed 12 object(s)`
+- [x] 4.2 Shell query `Attraction.objects.count()` returns `12`
+- [x] 4.3 All four category slugs present in DB
 
 #### Manual
 
-- [ ] 4.4 `GET /` shows 6 cards (Błonia Park … Polish Aviation Museum), load-more button visible
-- [ ] 4.5 Load-more appends remaining 6 cards, button disappears
-- [ ] 4.6 Each category filter shows exactly 3 cards with no load-more button
+- [x] 4.4 `GET /` shows 6 cards (Błonia Park … Polish Aviation Museum), load-more button visible
+- [x] 4.5 Load-more appends remaining 6 cards, button disappears
+- [x] 4.6 Each category filter shows exactly 3 cards with no load-more button
 
 ### Phase 5: Tests
 

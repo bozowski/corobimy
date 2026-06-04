@@ -1,0 +1,122 @@
+[
+  {
+    "model": "attractions.attraction",
+    "pk": 1,
+    "fields": {
+      "name": "Błonia Park",
+      "category": "sport",
+      "description": "48-hectare open meadow at the edge of the city used by locals for runs, cycling, and kite flying. Free, crowd-free on weekdays, and one of the few green spaces in Kraków that doesn't feel like a park.",
+      "created_at": "2026-06-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "attractions.attraction",
+    "pk": 2,
+    "fields": {
+      "name": "Czartoryski Museum",
+      "category": "culture",
+      "description": "Poland's oldest public museum, home to Leonardo da Vinci's Lady with an Ermine. The building is 14th-century; the collection ranges from ancient Egyptian artefacts to Renaissance paintings.",
+      "created_at": "2026-06-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "attractions.attraction",
+    "pk": 3,
+    "fields": {
+      "name": "Kazimierz District",
+      "category": "couples",
+      "description": "Kraków's former Jewish quarter, now full of independent cafes, jazz clubs, and second-hand bookshops. Best explored slowly in the evening when the lanterns come on.",
+      "created_at": "2026-06-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "attractions.attraction",
+    "pk": 4,
+    "fields": {
+      "name": "Kraków Zoo",
+      "category": "family",
+      "description": "Walk-through enclosures set inside Las Wolski forest. Elephants, giraffes, and a petting paddock for young children. The forest setting makes it feel less like a zoo and more like a nature walk.",
+      "created_at": "2026-06-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "attractions.attraction",
+    "pk": 5,
+    "fields": {
+      "name": "Oskar Schindler's Factory",
+      "category": "culture",
+      "description": "Award-winning museum documenting Kraków under Nazi occupation, set inside the actual enamel factory. Unsettling and essential — budget at least two hours.",
+      "created_at": "2026-06-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "attractions.attraction",
+    "pk": 6,
+    "fields": {
+      "name": "Polish Aviation Museum",
+      "category": "family",
+      "description": "Over 200 aircraft in an open-air display: MiG jets, WWII bombers, and Cold War-era fighters. The outdoor collection is free to walk around; the main hall requires a ticket.",
+      "created_at": "2026-06-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "attractions.attraction",
+    "pk": 7,
+    "fields": {
+      "name": "Rynek Główny",
+      "category": "couples",
+      "description": "One of Europe's largest medieval market squares. Beautiful at any hour, best at dusk when the Cloth Hall is lit and the crowds thin. Street musicians most evenings in summer.",
+      "created_at": "2026-06-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "attractions.attraction",
+    "pk": 8,
+    "fields": {
+      "name": "Vistula Cycling Route",
+      "category": "sport",
+      "description": "Flat riverside path from Wawel Hill to Tyniec Abbey and back — about 30 km round trip. Bike rentals available near the riverbank. Views of the city from the opposite bank are the highlight.",
+      "created_at": "2026-06-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "attractions.attraction",
+    "pk": 9,
+    "fields": {
+      "name": "Wawel Dragon Den",
+      "category": "family",
+      "description": "The legendary dragon's lair under Wawel Hill. Short cave walk with a fire-breathing steel dragon at the exit. Children under ten will tell the story for years.",
+      "created_at": "2026-06-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "attractions.attraction",
+    "pk": 10,
+    "fields": {
+      "name": "Wawel Royal Castle Gardens",
+      "category": "couples",
+      "description": "Hillside gardens surrounding Wawel Castle with sweeping views over the Vistula. Quiet on weekday mornings and genuinely romantic at golden hour. Free to enter.",
+      "created_at": "2026-06-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "attractions.attraction",
+    "pk": 11,
+    "fields": {
+      "name": "Wieliczka Salt Mine",
+      "category": "culture",
+      "description": "UNESCO World Heritage site 135 metres underground: hand-carved salt chapels, brine lakes, and chandeliers made of salt crystals. Book ahead — it sells out most weekends.",
+      "created_at": "2026-06-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "attractions.attraction",
+    "pk": 12,
+    "fields": {
+      "name": "Zakrzówek Reservoir",
+      "category": "sport",
+      "description": "Former limestone quarry now a turquoise swimming lake popular with local divers and cliff jumpers in summer. Ice skating when it freezes in winter. Not a tourist spot — entirely local.",
+      "created_at": "2026-06-01T00:00:00Z"
+    }
+  }
+]
