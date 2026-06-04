@@ -629,13 +629,13 @@ Do not use `RunPython` in this migration. Seed data is loaded separately via `lo
 
 #### Automated
 
-- [ ] 1.1 `uv run python manage.py check` exits 0
-- [ ] 1.2 `uv run python manage.py collectstatic --no-input` exits 0
+- [x] 1.1 `uv run python manage.py check` exits 0
+- [x] 1.2 `uv run python manage.py collectstatic --no-input` exits 0
 
 #### Manual
 
-- [ ] 1.3 Dev server starts with no import errors
-- [ ] 1.4 `/health/` still returns `{"status": "ok"}`
+- [x] 1.3 Dev server starts with no import errors
+- [x] 1.4 `/health/` still returns `{"status": "ok"}`
 
 ### Phase 2: Attraction App + Data Model
 

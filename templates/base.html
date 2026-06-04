@@ -1,0 +1,14 @@
+{% load django_htmx %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Discover Kraków{% endblock %}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+  {% htmx_script %}
+  {% block content %}{% endblock %}
+</body>
+</html>

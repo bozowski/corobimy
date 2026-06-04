@@ -8,6 +8,8 @@ dependencies = [
     "psycopg[binary]>=3.2.0",
     "dj-database-url>=2.3.0",
     "whitenoise>=6.9.0",
+    "django-filter>=25.2",
+    "django-htmx>=1.27.0",
 ]
 
 [tool.uv]
