@@ -669,24 +669,24 @@ Do not use `RunPython` in this migration. Seed data is loaded separately via `lo
 
 #### Automated
 
-- [x] 4.1 `uv run python manage.py loaddata initial_attractions` exits 0 with `Installed 12 object(s)`
-- [x] 4.2 Shell query `Attraction.objects.count()` returns `12`
-- [x] 4.3 All four category slugs present in DB
+- [x] 4.1 `uv run python manage.py loaddata initial_attractions` exits 0 with `Installed 12 object(s)` — 2db36ae
+- [x] 4.2 Shell query `Attraction.objects.count()` returns `12` — 2db36ae
+- [x] 4.3 All four category slugs present in DB — 2db36ae
 
 #### Manual
 
-- [x] 4.4 `GET /` shows 6 cards (Błonia Park … Polish Aviation Museum), load-more button visible
-- [x] 4.5 Load-more appends remaining 6 cards, button disappears
-- [x] 4.6 Each category filter shows exactly 3 cards with no load-more button
+- [x] 4.4 `GET /` shows 6 cards (Błonia Park … Polish Aviation Museum), load-more button visible — 2db36ae
+- [x] 4.5 Load-more appends remaining 6 cards, button disappears — 2db36ae
+- [x] 4.6 Each category filter shows exactly 3 cards with no load-more button — 2db36ae
 
 ### Phase 5: Tests
 
 #### Automated
 
-- [ ] 5.1 `uv run python manage.py test attractions` exits 0, all tests pass
-- [ ] 5.2 No Django warnings in test output
+- [x] 5.1 `uv run python manage.py test attractions` exits 0, all tests pass
+- [x] 5.2 No Django warnings in test output
 
 #### Manual
 
-- [ ] 5.3 Review test output — no skipped or errored tests
-- [ ] 5.4 Load-more path confirmed using `cards_append.html` template
+- [x] 5.3 Review test output — no skipped or errored tests
+- [x] 5.4 Load-more path confirmed using `cards_append.html` template
