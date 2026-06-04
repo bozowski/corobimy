@@ -1,0 +1,24 @@
+<div id="attraction-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  {% for attraction in attractions %}
+    <div class="border rounded-lg p-4 shadow-sm bg-white">
+      <h2 class="text-lg font-semibold mb-1">{{ attraction.name }}</h2>
+      <span class="text-xs uppercase tracking-wide text-gray-500 mb-2 block">{{ attraction.get_category_display }}</span>
+      <p class="text-sm text-gray-700">{{ attraction.description }}</p>
+    </div>
+  {% empty %}
+    <p class="col-span-3 text-gray-500">No attractions found for this category.</p>
+  {% endfor %}
+</div>
+
+<div id="load-more-container" class="mt-6 text-center">
+  {% if has_more %}
+    <button
+      hx-get="{% url 'attraction-list' %}?offset={{ next_offset }}{% if request.GET.category %}&category={{ request.GET.category }}{% endif %}"
+      hx-target="#attraction-grid"
+      hx-swap="beforeend"
+      class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+    >
+      Load more
+    </button>
+  {% endif %}
+</div>

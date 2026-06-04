@@ -641,29 +641,29 @@ Do not use `RunPython` in this migration. Seed data is loaded separately via `lo
 
 #### Automated
 
-- [x] 2.1 `uv run python manage.py migrate` exits 0
-- [x] 2.2 `uv run python manage.py check` exits 0
-- [x] 2.3 `uv run python manage.py test` exits 0
+- [x] 2.1 `uv run python manage.py migrate` exits 0 — 22bbae8
+- [x] 2.2 `uv run python manage.py check` exits 0 — 22bbae8
+- [x] 2.3 `uv run python manage.py test` exits 0 — 22bbae8
 
 #### Manual
 
-- [x] 2.4 Shell query `Attraction.objects.count()` returns `0`
-- [x] 2.5 `/admin/attractions/attraction/add/` loads and shows exactly four category options
+- [x] 2.4 Shell query `Attraction.objects.count()` returns `0` — 22bbae8
+- [x] 2.5 `/admin/attractions/attraction/add/` loads and shows exactly four category options — 22bbae8
 
 ### Phase 3: Browse View + Filter + URL Routing + Templates
 
 #### Automated
 
-- [ ] 3.1 `uv run python manage.py check` exits 0
-- [ ] 3.2 `uv run python manage.py test attractions` exits 0
+- [x] 3.1 `uv run python manage.py check` exits 0
+- [x] 3.2 `uv run python manage.py test attractions` exits 0
 
 #### Manual
 
-- [ ] 3.3 `GET /` returns HTTP 200 with full HTML
-- [ ] 3.4 Category filter triggers HTMX XHR (not page reload), grid updates instantly
-- [ ] 3.5 Load-more appends cards without replacing existing ones (test with 7+ attractions in admin)
-- [ ] 3.6 No-JS fallback: `?category=family` URL produces correct filtered results
-- [ ] 3.7 Empty state message appears when DB is empty
+- [x] 3.3 `GET /` returns HTTP 200 with full HTML
+- [x] 3.4 Category filter triggers HTMX XHR (not page reload), grid updates instantly
+- [x] 3.5 Load-more appends cards without replacing existing ones (test with 7+ attractions in admin)
+- [x] 3.6 No-JS fallback: `?category=family` URL produces correct filtered results
+- [x] 3.7 Empty state message appears when DB is empty
 
 ### Phase 4: Seed Data
 
