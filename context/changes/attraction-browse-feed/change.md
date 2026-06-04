@@ -1,7 +1,7 @@
 ---
 change_id: attraction-browse-feed
 title: Attraction browse feed
-status: implemented
+status: impl_reviewed
 created: 2026-06-01
 updated: 2026-06-04
 archived_at: null

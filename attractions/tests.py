@@ -80,10 +80,12 @@ class AttractionListViewTest(TestCase):
         self.assertFalse(response.context['has_more'])
 
     def test_empty_state_when_no_matches(self):
+        Attraction.objects.filter(category='sport').delete()
         response = self.client.get(
             reverse('attraction-list') + '?category=sport',
         )
-        self.assertEqual(response.context['filter'].qs.count(), 1)
+        self.assertEqual(response.context['filter'].qs.count(), 0)
+        self.assertContains(response, 'No attractions found for this category.')
 
 
 class AttractionFilterTest(TestCase):

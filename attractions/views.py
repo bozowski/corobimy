@@ -7,12 +7,16 @@ PAGE_SIZE = 6
 
 def attraction_list(request):
     f = AttractionFilter(request.GET, queryset=Attraction.objects.all())
-    offset = int(request.GET.get('offset', 0))
+    try:
+        offset = max(0, int(request.GET.get('offset', 0)))
+    except (ValueError, TypeError):
+        offset = 0
     qs = f.qs
+    total = qs.count()
     context = {
         'filter': f,
         'attractions': qs[offset:offset + PAGE_SIZE],
-        'has_more': (offset + PAGE_SIZE) < qs.count(),
+        'has_more': (offset + PAGE_SIZE) < total,
         'next_offset': offset + PAGE_SIZE,
     }
     if request.htmx:
