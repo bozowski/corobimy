@@ -629,26 +629,26 @@ Do not use `RunPython` in this migration. Seed data is loaded separately via `lo
 
 #### Automated
 
-- [x] 1.1 `uv run python manage.py check` exits 0
-- [x] 1.2 `uv run python manage.py collectstatic --no-input` exits 0
+- [x] 1.1 `uv run python manage.py check` exits 0 — ea5a189
+- [x] 1.2 `uv run python manage.py collectstatic --no-input` exits 0 — ea5a189
 
 #### Manual
 
-- [x] 1.3 Dev server starts with no import errors
-- [x] 1.4 `/health/` still returns `{"status": "ok"}`
+- [x] 1.3 Dev server starts with no import errors — ea5a189
+- [x] 1.4 `/health/` still returns `{"status": "ok"}` — ea5a189
 
 ### Phase 2: Attraction App + Data Model
 
 #### Automated
 
-- [ ] 2.1 `uv run python manage.py migrate` exits 0
-- [ ] 2.2 `uv run python manage.py check` exits 0
-- [ ] 2.3 `uv run python manage.py test` exits 0
+- [x] 2.1 `uv run python manage.py migrate` exits 0
+- [x] 2.2 `uv run python manage.py check` exits 0
+- [x] 2.3 `uv run python manage.py test` exits 0
 
 #### Manual
 
-- [ ] 2.4 Shell query `Attraction.objects.count()` returns `0`
-- [ ] 2.5 `/admin/attractions/attraction/add/` loads and shows exactly four category options
+- [x] 2.4 Shell query `Attraction.objects.count()` returns `0`
+- [x] 2.5 `/admin/attractions/attraction/add/` loads and shows exactly four category options
 
 ### Phase 3: Browse View + Filter + URL Routing + Templates
 
