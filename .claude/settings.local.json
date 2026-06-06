@@ -33,7 +33,9 @@
       "WebFetch(domain:django-filter.readthedocs.io)",
       "WebFetch(domain:django-htmx.readthedocs.io)",
       "Bash(git restore *)",
-      "Bash(uv run *)"
+      "Bash(uv run *)",
+      "mcp__linear-server__list_projects",
+      "mcp__linear-server__list_issues"
     ]
   }
 }
