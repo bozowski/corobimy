@@ -172,3 +172,21 @@ class SaveAcrossAuthTest(TestCase):
         self.assertTrue(
             UserSavedAttraction.objects.filter(user=self.user, attraction=self.attraction).exists()
         )
+
+    def test_register_path_save_persists(self):
+        save_url = reverse('attraction-save', args=[self.attraction.pk])
+        self.client.post(save_url)
+        self.client.post(
+            '/accounts/register/',
+            {
+                'username': 'newreguser',
+                'password1': 'testpass123!',
+                'password2': 'testpass123!',
+                'next': save_url,
+            },
+            follow=True,
+        )
+        new_user = User.objects.get(username='newreguser')
+        self.assertTrue(
+            UserSavedAttraction.objects.filter(user=new_user, attraction=self.attraction).exists()
+        )

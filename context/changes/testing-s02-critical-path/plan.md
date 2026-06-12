@@ -258,25 +258,25 @@ Five new tests across three classes in `attractions/tests.py`:
 
 #### Automated
 
-- [x] 1.1 `uv run python manage.py test attractions.tests.SaveAuthGateTest` — 3 tests, 0 failures
-- [x] 1.2 `uv run python manage.py test attractions.tests.UserSaveIsolationTest` — 1 test, 0 failures
-- [x] 1.3 `uv run python manage.py test attractions.tests.SaveAcrossAuthTest.test_login_path_save_persists` — 1 test, 0 failures
-- [x] 1.4 `uv run python manage.py test attractions` — 14 tests, 0 failures, 0 errors
+- [x] 1.1 `uv run python manage.py test attractions.tests.SaveAuthGateTest` — 3 tests, 0 failures — 4f8d576
+- [x] 1.2 `uv run python manage.py test attractions.tests.UserSaveIsolationTest` — 1 test, 0 failures — 4f8d576
+- [x] 1.3 `uv run python manage.py test attractions.tests.SaveAcrossAuthTest.test_login_path_save_persists` — 1 test, 0 failures — 4f8d576
+- [x] 1.4 `uv run python manage.py test attractions` — 14 tests, 0 failures, 0 errors — 4f8d576
 
 #### Manual
 
-- [x] 1.5 5 new tests listed in output, all showing `.` (pass)
+- [x] 1.5 5 new tests listed in output, all showing `.` (pass) — 4f8d576
 
 ### Phase 2: Red test (Risk #1 register path)
 
 #### Automated
 
-- [ ] 2.1 `uv run python manage.py test attractions.tests.SaveAcrossAuthTest.test_register_path_save_persists` — 1 FAIL (AssertionError on DB row, not an error)
-- [ ] 2.2 `uv run python manage.py test attractions` — 15 tests, 14 pass, 1 fails, 0 errors
+- [x] 2.1 `uv run python manage.py test attractions.tests.SaveAcrossAuthTest.test_register_path_save_persists` — 1 FAIL (AssertionError on DB row, not an error)
+- [x] 2.2 `uv run python manage.py test attractions` — 15 tests, 14 pass, 1 fails, 0 errors
 
 #### Manual
 
-- [ ] 2.3 Failure message names the missing `UserSavedAttraction` row
+- [x] 2.3 Failure message names the missing `UserSavedAttraction` row
 
 ### Phase 3: Fix register-path bug
 
