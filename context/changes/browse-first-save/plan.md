@@ -418,31 +418,31 @@ To verify: `uv run python manage.py showmigrations attractions` should show `000
 
 #### Automated
 
-- [x] 3.1 System check passes (`uv run python manage.py check`)
-- [x] 3.2 All existing tests pass (`uv run python manage.py test`)
+- [x] 3.1 System check passes (`uv run python manage.py check`) — 2347e91
+- [x] 3.2 All existing tests pass (`uv run python manage.py test`) — 2347e91
 
 #### Manual
 
-- [x] 3.3 `GET /accounts/login/` renders login form
-- [x] 3.4 `POST /accounts/login/` with valid credentials redirects to `/`
-- [x] 3.5 Login with `?next=/attractions/1/save/` → save created → redirect to `/`
-- [x] 3.6 `GET /accounts/register/` renders register form
-- [x] 3.7 `POST /accounts/register/` creates user, logs in, redirects to `/`
-- [x] 3.8 Logout renders confirmation and link back to browse
+- [x] 3.3 `GET /accounts/login/` renders login form — 2347e91
+- [x] 3.4 `POST /accounts/login/` with valid credentials redirects to `/` — 2347e91
+- [x] 3.5 Login with `?next=/attractions/1/save/` → save created → redirect to `/` — 2347e91
+- [x] 3.6 `GET /accounts/register/` renders register form — 2347e91
+- [x] 3.7 `POST /accounts/register/` creates user, logs in, redirects to `/` — 2347e91
+- [x] 3.8 Logout renders confirmation and link back to browse — 2347e91
 
 ### Phase 4: Save Button in Templates
 
 #### Automated
 
-- [ ] 4.1 All existing tests pass (`uv run python manage.py test`)
-- [ ] 4.2 System check passes (`uv run python manage.py check`)
+- [x] 4.1 All existing tests pass (`uv run python manage.py test`)
+- [x] 4.2 System check passes (`uv run python manage.py check`)
 
 #### Manual
 
-- [ ] 4.3 Save buttons appear on all attraction cards on browse page
-- [ ] 4.4 Full anonymous-save → login → save-created → "Saved ✓" flow works end-to-end
-- [ ] 4.5 Full anonymous-save → register → save-created → "Saved ✓" flow works end-to-end
-- [ ] 4.6 Load-more cards show correct save button state
-- [ ] 4.7 HTMX filter renders correct save button state on filtered cards
-- [ ] 4.8 Two-user isolation: User A's saves not shown as saved to User B
-- [ ] 4.9 No regression in filter, load-more, empty state, or category display
+- [x] 4.3 Save buttons appear on all attraction cards on browse page
+- [x] 4.4 Full anonymous-save → login → save-created → "Saved ✓" flow works end-to-end
+- [x] 4.5 Full anonymous-save → register → save-created → "Saved ✓" flow works end-to-end
+- [x] 4.6 Load-more cards show correct save button state
+- [x] 4.7 HTMX filter renders correct save button state on filtered cards
+- [x] 4.8 Two-user isolation: User A's saves not shown as saved to User B
+- [x] 4.9 No regression in filter, load-more, empty state, or category display
