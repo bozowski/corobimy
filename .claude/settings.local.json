@@ -41,7 +41,9 @@
       "Bash(SECRET_KEY=django-insecure-dev-only-do-not-use-in-production PYTHONIOENCODING=utf-8 uv run python -m mutmut run --help)",
       "PowerShell(git add *)",
       "PowerShell(git diff *)",
-      "Bash(SECRET_KEY=\"django-insecure-dev-only\" uv run pytest attractions/tests.py -v)"
+      "Bash(SECRET_KEY=\"django-insecure-dev-only\" uv run pytest attractions/tests.py -v)",
+      "Bash(gh repo *)",
+      "PowerShell(gh repo view bozowski/corobimy --json hasIssuesEnabled,visibility,defaultBranchRef 2>&1)"
     ]
   }
 }
