@@ -1,5 +1,6 @@
 import django_filters
-from attractions.models import Attraction, CATEGORY_CHOICES
+
+from attractions.models import CATEGORY_CHOICES, Attraction
 
 
 class AttractionFilter(django_filters.FilterSet):

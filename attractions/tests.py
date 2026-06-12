@@ -1,8 +1,9 @@
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
-from attractions.models import Attraction, UserSavedAttraction
+
 from attractions.filters import AttractionFilter
+from attractions.models import Attraction, UserSavedAttraction
 
 User = get_user_model()
 

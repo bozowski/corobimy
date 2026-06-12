@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
+
 from attractions.filters import AttractionFilter
 from attractions.models import Attraction, UserSavedAttraction
 
