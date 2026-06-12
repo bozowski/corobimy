@@ -15,4 +15,16 @@ dependencies = [
 [tool.uv]
 dev-dependencies = [
     "mutmut>=3.6.0",
+    "pytest-django>=4.12.0",
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "corobimy.settings"
+
+[tool.mutmut]
+source_paths = ["attractions/views.py", "attractions/models.py"]
+pytest_add_cli_args_test_selection = [
+    "attractions/tests.py::SaveAuthGateTest",
+    "attractions/tests.py::UserSaveIsolationTest",
+    "attractions/tests.py::SaveAcrossAuthTest::test_login_path_save_persists",
 ]

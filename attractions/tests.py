@@ -1,7 +1,10 @@
+from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
-from attractions.models import Attraction
+from attractions.models import Attraction, UserSavedAttraction
 from attractions.filters import AttractionFilter
+
+User = get_user_model()
 
 
 def make_attraction(name, category='culture', description='Test description'):
@@ -108,3 +111,64 @@ class AttractionFilterTest(TestCase):
     def test_empty_label_allows_unfiltered(self):
         f = AttractionFilter({'category': ''}, queryset=Attraction.objects.all())
         self.assertEqual(f.qs.count(), 3)
+
+
+class SaveAuthGateTest(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        cls.attraction = make_attraction('Gate Test Attraction')
+        cls.user = User.objects.create_user('gateuser', password='testpass123!')
+
+    def test_anonymous_post_is_rejected(self):
+        url = reverse('attraction-save', args=[self.attraction.pk])
+        response = self.client.post(url)
+        self.assertEqual(response.status_code, 302)
+        self.assertIn('/accounts/login/', response['Location'])
+        self.assertEqual(UserSavedAttraction.objects.count(), 0)
+
+    def test_authenticated_post_saves_and_redirects(self):
+        self.client.force_login(self.user)
+        url = reverse('attraction-save', args=[self.attraction.pk])
+        response = self.client.post(url)
+        self.assertRedirects(response, reverse('attraction-list'))
+        self.assertTrue(
+            UserSavedAttraction.objects.filter(user=self.user, attraction=self.attraction).exists()
+        )
+
+    def test_invalid_pk_returns_404(self):
+        self.client.force_login(self.user)
+        response = self.client.get(reverse('attraction-save', args=[99999]))
+        self.assertEqual(response.status_code, 404)
+
+
+class UserSaveIsolationTest(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        cls.attraction = make_attraction('Isolation Test Attraction')
+        cls.user_a = User.objects.create_user('isolation_user_a', password='testpass123!')
+        cls.user_b = User.objects.create_user('isolation_user_b', password='testpass123!')
+        UserSavedAttraction.objects.create(user=cls.user_a, attraction=cls.attraction)
+
+    def test_user_b_context_excludes_user_a_saves(self):
+        self.client.force_login(self.user_b)
+        response = self.client.get(reverse('attraction-list'))
+        self.assertNotIn(self.attraction.pk, response.context['saved_pks'])
+
+
+class SaveAcrossAuthTest(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        cls.attraction = make_attraction('Auth Test Attraction')
+        cls.user = User.objects.create_user('authuser', password='testpass123!')
+
+    def test_login_path_save_persists(self):
+        save_url = reverse('attraction-save', args=[self.attraction.pk])
+        self.client.post(save_url)
+        self.client.post(
+            '/accounts/login/',
+            {'username': 'authuser', 'password': 'testpass123!', 'next': save_url},
+            follow=True,
+        )
+        self.assertTrue(
+            UserSavedAttraction.objects.filter(user=self.user, attraction=self.attraction).exists()
+        )
