@@ -1,7 +1,7 @@
 ---
 change_id: browse-first-save
 title: Browse first save
-status: implemented
+status: impl_reviewed
 created: 2026-06-12
 updated: 2026-06-12
 archived_at: null
