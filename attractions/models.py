@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 CATEGORY_CHOICES = [
@@ -19,3 +20,16 @@ class Attraction(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class UserSavedAttraction(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='saved_attractions')
+    attraction = models.ForeignKey(Attraction, on_delete=models.CASCADE, related_name='saves')
+    saved_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = [('user', 'attraction')]
+        ordering = ['-saved_at']
+
+    def __str__(self):
+        return f"{self.user} → {self.attraction}"
