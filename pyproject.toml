@@ -13,4 +13,6 @@ dependencies = [
 ]
 
 [tool.uv]
-dev-dependencies = []
+dev-dependencies = [
+    "mutmut>=3.6.0",
+]
