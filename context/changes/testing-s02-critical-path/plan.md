@@ -282,11 +282,11 @@ Five new tests across three classes in `attractions/tests.py`:
 
 #### Automated
 
-- [x] 3.1 `uv run python manage.py test attractions.tests.SaveAcrossAuthTest.test_register_path_save_persists` — 1 test, 0 failures
-- [x] 3.2 `uv run python manage.py test attractions` — 15 tests, 0 failures, 0 errors
-- [x] 3.3 `uv run python manage.py test` — full project suite, 0 failures
+- [x] 3.1 `uv run python manage.py test attractions.tests.SaveAcrossAuthTest.test_register_path_save_persists` — 1 test, 0 failures — 30fbf41
+- [x] 3.2 `uv run python manage.py test attractions` — 15 tests, 0 failures, 0 errors — 30fbf41
+- [x] 3.3 `uv run python manage.py test` — full project suite, 0 failures — 30fbf41
 
 #### Manual
 
-- [x] 3.4 Anonymous save → Register flow works end-to-end in the browser (attraction marked saved after registration)
-- [x] 3.5 Anonymous save → Login flow still works (no regression)
+- [x] 3.4 Anonymous save → Register flow works end-to-end in the browser (attraction marked saved after registration) — 30fbf41
+- [x] 3.5 Anonymous save → Login flow still works (no regression) — 30fbf41
