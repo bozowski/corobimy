@@ -23,3 +23,8 @@ Thumbs.db
 # mutmut output
 mutants/
 .mutmut-cache
+
+# Claude / AI tooling
+.claude/
+CLAUDE.md
+AGENTS.md
