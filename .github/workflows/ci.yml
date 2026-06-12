@@ -27,5 +27,8 @@ jobs:
       - name: Lint
         run: uv run ruff check .
 
+      - name: Collect static files
+        run: uv run python manage.py collectstatic --noinput
+
       - name: Test
         run: uv run python manage.py test
