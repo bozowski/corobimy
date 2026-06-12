@@ -392,27 +392,27 @@ To verify: `uv run python manage.py showmigrations attractions` should show `000
 
 #### Automated
 
-- [x] 1.1 Migration applies without error (`uv run python manage.py migrate`)
-- [x] 1.2 System check passes (`uv run python manage.py check`)
-- [x] 1.3 All existing tests pass (`uv run python manage.py test`)
+- [x] 1.1 Migration applies without error (`uv run python manage.py migrate`) — c95b465
+- [x] 1.2 System check passes (`uv run python manage.py check`) — c95b465
+- [x] 1.3 All existing tests pass (`uv run python manage.py test`) — c95b465
 
 #### Manual
 
-- [x] 1.4 `UserSavedAttraction` visible in Django admin at `/admin/attractions/usersavedattraction/`
-- [x] 1.5 Admin form creates a save record; duplicate (same user + attraction) fails with unique constraint
+- [x] 1.4 `UserSavedAttraction` visible in Django admin at `/admin/attractions/usersavedattraction/` — c95b465
+- [x] 1.5 Admin form creates a save record; duplicate (same user + attraction) fails with unique constraint — c95b465
 
 ### Phase 2: Save Endpoint
 
 #### Automated
 
-- [ ] 2.1 System check passes (`uv run python manage.py check`)
-- [ ] 2.2 All existing tests pass (`uv run python manage.py test`)
+- [x] 2.1 System check passes (`uv run python manage.py check`)
+- [x] 2.2 All existing tests pass (`uv run python manage.py test`)
 
 #### Manual
 
-- [ ] 2.3 Authenticated POST to `/attractions/1/save/` creates DB row, redirects to `/`
-- [ ] 2.4 Anonymous POST to `/attractions/1/save/` returns 302 to `/accounts/login/?next=/attractions/1/save/`
-- [ ] 2.5 `attraction_list` context includes `saved_pks` (non-empty set for a user with saves)
+- [x] 2.3 Authenticated POST to `/attractions/1/save/` creates DB row, redirects to `/`
+- [x] 2.4 Anonymous POST to `/attractions/1/save/` returns 302 to `/accounts/login/?next=/attractions/1/save/`
+- [x] 2.5 `attraction_list` context includes `saved_pks` (non-empty set for a user with saves)
 
 ### Phase 3: accounts/ App
 
