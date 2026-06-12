@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django_filters',
     'django_htmx',
     'attractions.apps.AttractionsConfig',
+    'accounts',
 ]
 
 MIDDLEWARE = [

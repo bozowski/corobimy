@@ -405,30 +405,30 @@ To verify: `uv run python manage.py showmigrations attractions` should show `000
 
 #### Automated
 
-- [x] 2.1 System check passes (`uv run python manage.py check`)
-- [x] 2.2 All existing tests pass (`uv run python manage.py test`)
+- [x] 2.1 System check passes (`uv run python manage.py check`) — bcad1c0
+- [x] 2.2 All existing tests pass (`uv run python manage.py test`) — bcad1c0
 
 #### Manual
 
-- [x] 2.3 Authenticated POST to `/attractions/1/save/` creates DB row, redirects to `/`
-- [x] 2.4 Anonymous POST to `/attractions/1/save/` returns 302 to `/accounts/login/?next=/attractions/1/save/`
-- [x] 2.5 `attraction_list` context includes `saved_pks` (non-empty set for a user with saves)
+- [x] 2.3 Authenticated POST to `/attractions/1/save/` creates DB row, redirects to `/` — bcad1c0
+- [x] 2.4 Anonymous POST to `/attractions/1/save/` returns 302 to `/accounts/login/?next=/attractions/1/save/` — bcad1c0
+- [x] 2.5 `attraction_list` context includes `saved_pks` (non-empty set for a user with saves) — bcad1c0
 
 ### Phase 3: accounts/ App
 
 #### Automated
 
-- [ ] 3.1 System check passes (`uv run python manage.py check`)
-- [ ] 3.2 All existing tests pass (`uv run python manage.py test`)
+- [x] 3.1 System check passes (`uv run python manage.py check`)
+- [x] 3.2 All existing tests pass (`uv run python manage.py test`)
 
 #### Manual
 
-- [ ] 3.3 `GET /accounts/login/` renders login form
-- [ ] 3.4 `POST /accounts/login/` with valid credentials redirects to `/`
-- [ ] 3.5 Login with `?next=/attractions/1/save/` → save created → redirect to `/`
-- [ ] 3.6 `GET /accounts/register/` renders register form
-- [ ] 3.7 `POST /accounts/register/` creates user, logs in, redirects to `/`
-- [ ] 3.8 Logout renders confirmation and link back to browse
+- [x] 3.3 `GET /accounts/login/` renders login form
+- [x] 3.4 `POST /accounts/login/` with valid credentials redirects to `/`
+- [x] 3.5 Login with `?next=/attractions/1/save/` → save created → redirect to `/`
+- [x] 3.6 `GET /accounts/register/` renders register form
+- [x] 3.7 `POST /accounts/register/` creates user, logs in, redirects to `/`
+- [x] 3.8 Logout renders confirmation and link back to browse
 
 ### Phase 4: Save Button in Templates
 
