@@ -290,3 +290,15 @@ Five new tests across three classes in `attractions/tests.py`:
 
 - [x] 3.4 Anonymous save → Register flow works end-to-end in the browser (attraction marked saved after registration) — 30fbf41
 - [x] 3.5 Anonymous save → Login flow still works (no regression) — 30fbf41
+
+---
+
+## Addendum: Unplanned test-infrastructure files
+
+Two files were added outside the original plan scope during implementation. Both are test infrastructure only — no app code is touched.
+
+**`conftest.py`** — `pytest_configure` hook that sets `SECRET_KEY` and `DEBUG` env vars so pytest can bootstrap Django without a `.env` file. Limitation: `pytest_configure` fires after pytest-django attempts to read settings, so `SECRET_KEY` must already be in the shell environment when `uv run pytest` is invoked (e.g. via `.env`, shell export, or `SECRET_KEY=... uv run pytest`).
+
+**`pyproject.toml`** — Two new sections added:
+- `[tool.pytest.ini_options]`: sets `DJANGO_SETTINGS_MODULE = "corobimy.settings"` so pytest-django knows which settings to use.
+- `[tool.mutmut]`: scopes mutation testing to `attractions/views.py` and `attractions/models.py`, with test selection targeting the three new test classes.

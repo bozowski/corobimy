@@ -165,7 +165,7 @@ class SaveAcrossAuthTest(TestCase):
         save_url = reverse('attraction-save', args=[self.attraction.pk])
         self.client.post(save_url)
         self.client.post(
-            '/accounts/login/',
+            reverse('login'),
             {'username': 'authuser', 'password': 'testpass123!', 'next': save_url},
             follow=True,
         )
@@ -177,7 +177,7 @@ class SaveAcrossAuthTest(TestCase):
         save_url = reverse('attraction-save', args=[self.attraction.pk])
         self.client.post(save_url)
         self.client.post(
-            '/accounts/register/',
+            reverse('register'),
             {
                 'username': 'newreguser',
                 'password1': 'testpass123!',

@@ -33,7 +33,7 @@ The north star — the smallest end-to-end slice whose delivery proves the produ
 |------|---------------------------|---------------------------------------------------------------------------------------|---------------|--------------------------------|----------|
 | F-01 | railway-deploy-skeleton   | (foundation) Django live on Railway, Postgres wired, /health/ endpoint, errors logged | —             | PRD §NFRs, PRD §Access Control | done     |
 | S-01 | attraction-browse-feed    | browse and filter Kraków attractions without signing in                               | F-01          | FR-003, FR-004                 | done        |
-| S-02 | browse-first-save         | save an attraction; if anonymous, complete auth gate without losing the selection     | S-01          | FR-001, FR-002, FR-005, US-01  | proposed |
+| S-02 | browse-first-save         | save an attraction; if anonymous, complete auth gate without losing the selection     | S-01          | FR-001, FR-002, FR-005, US-01  | done     |
 | S-03 | operator-content-refresh  | (operator) manually trigger a refresh of Kraków attraction listings                   | S-01          | FR-009                         | blocked  |
 
 ## Streams
@@ -97,7 +97,7 @@ What's already in place in the codebase as of 2026-05-29 (auto-researched + user
 - **Unknowns:**
   - How should the post-auth redirect preserve the pending save — session-based pre-auth buffer, URL parameter, or client-side state? — Owner: dev. Block: no (implementation decision for /10x-plan to resolve).
 - **Risk:** This is the north star slice — US-01 acceptance criteria complete here. The riskiest criterion is "save completes without losing the selected attraction" across the auth redirect boundary; browse-first patterns most commonly break at that hand-off.
-- **Status:** proposed
+- **Status:** done
 
 ### S-03: Operator attraction refresh
 
@@ -118,7 +118,7 @@ What's already in place in the codebase as of 2026-05-29 (auto-researched + user
 |------------|--------------------------|-----------------------------------------------------|-----------------------|-------|
 | F-01       | railway-deploy-skeleton  | Wire Railway + Postgres, /health/ endpoint, logging | —                     | Done — archived via `/10x-archive` |
 | S-01       | attraction-browse-feed   | Browse and filter Kraków attractions (anonymous)    | —                     | Done — impl-reviewed 2026-06-04 |
-| S-02       | browse-first-save        | Save attraction with browse-first auth gate         | no                    | Depends on S-01 |
+| S-02       | browse-first-save        | Save attraction with browse-first auth gate         | —                     | Done — impl-reviewed + tests green 2026-06-12 |
 | S-03       | operator-content-refresh | Operator manual attraction data refresh             | no                    | Blocked — resolve content acquisition Unknown first |
 
 ## Open Roadmap Questions
@@ -142,3 +142,4 @@ What's already in place in the codebase as of 2026-05-29 (auto-researched + user
 |------|-------------------------|---------------------------------------------------------------------------------------|------------|
 | F-01 | railway-deploy-skeleton | Django live on Railway, Postgres wired, /health/ endpoint, errors logged to stdout    | 2026-05-30 |
 | S-01 | attraction-browse-feed  | Anonymous browse + HTMX category filter + load-more, 12 seeded Kraków attractions     | 2026-06-04 |
+| S-02 | browse-first-save       | Save attraction with browse-first auth gate; critical-path tests green                | 2026-06-12 |

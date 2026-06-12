@@ -37,7 +37,11 @@
       "mcp__linear-server__list_projects",
       "mcp__linear-server__list_issues",
       "mcp__linear-server__list_teams",
-      "mcp__linear-server__save_issue"
+      "mcp__linear-server__save_issue",
+      "Bash(SECRET_KEY=django-insecure-dev-only-do-not-use-in-production PYTHONIOENCODING=utf-8 uv run python -m mutmut run --help)",
+      "PowerShell(git add *)",
+      "PowerShell(git diff *)",
+      "Bash(SECRET_KEY=\"django-insecure-dev-only\" uv run pytest attractions/tests.py -v)"
     ]
   }
 }

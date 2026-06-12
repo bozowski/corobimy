@@ -1,7 +1,7 @@
 ---
 change_id: testing-s02-critical-path
 title: Testing s02 critical path
-status: implemented
+status: impl_reviewed
 created: 2026-06-06
 updated: 2026-06-12
 archived_at: null
