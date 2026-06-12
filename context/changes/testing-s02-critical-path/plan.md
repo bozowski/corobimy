@@ -271,22 +271,22 @@ Five new tests across three classes in `attractions/tests.py`:
 
 #### Automated
 
-- [x] 2.1 `uv run python manage.py test attractions.tests.SaveAcrossAuthTest.test_register_path_save_persists` — 1 FAIL (AssertionError on DB row, not an error)
-- [x] 2.2 `uv run python manage.py test attractions` — 15 tests, 14 pass, 1 fails, 0 errors
+- [x] 2.1 `uv run python manage.py test attractions.tests.SaveAcrossAuthTest.test_register_path_save_persists` — 1 FAIL (AssertionError on DB row, not an error) — 4760143
+- [x] 2.2 `uv run python manage.py test attractions` — 15 tests, 14 pass, 1 fails, 0 errors — 4760143
 
 #### Manual
 
-- [x] 2.3 Failure message names the missing `UserSavedAttraction` row
+- [x] 2.3 Failure message names the missing `UserSavedAttraction` row — 4760143
 
 ### Phase 3: Fix register-path bug
 
 #### Automated
 
-- [ ] 3.1 `uv run python manage.py test attractions.tests.SaveAcrossAuthTest.test_register_path_save_persists` — 1 test, 0 failures
-- [ ] 3.2 `uv run python manage.py test attractions` — 15 tests, 0 failures, 0 errors
-- [ ] 3.3 `uv run python manage.py test` — full project suite, 0 failures
+- [x] 3.1 `uv run python manage.py test attractions.tests.SaveAcrossAuthTest.test_register_path_save_persists` — 1 test, 0 failures
+- [x] 3.2 `uv run python manage.py test attractions` — 15 tests, 0 failures, 0 errors
+- [x] 3.3 `uv run python manage.py test` — full project suite, 0 failures
 
 #### Manual
 
-- [ ] 3.4 Anonymous save → Register flow works end-to-end in the browser (attraction marked saved after registration)
-- [ ] 3.5 Anonymous save → Login flow still works (no regression)
+- [x] 3.4 Anonymous save → Register flow works end-to-end in the browser (attraction marked saved after registration)
+- [x] 3.5 Anonymous save → Login flow still works (no regression)
