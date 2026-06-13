@@ -28,3 +28,6 @@ mutants/
 .claude/
 CLAUDE.md
 AGENTS.md
+.agents
+skills-lock.json
+bash.exe.stackdump
