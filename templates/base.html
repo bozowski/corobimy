@@ -9,6 +9,22 @@
 </head>
 <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
   {% htmx_script %}
+  <header class="bg-white border-b border-gray-200">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="{% url 'attraction-list' %}" class="text-lg font-semibold text-gray-900">Discover Kraków</a>
+      <div class="flex items-center gap-4 text-sm">
+        {% if user.is_authenticated %}
+          <span class="text-gray-600">Hi, {{ user.username }}</span>
+          <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="text-gray-700 hover:text-gray-900 font-medium">Logout</button>
+          </form>
+        {% else %}
+          <a href="{% url 'login' %}?next={{ request.path }}" class="text-gray-700 hover:text-gray-900 font-medium">Login</a>
+        {% endif %}
+      </div>
+    </div>
+  </header>
   {% block content %}{% endblock %}
 </body>
 </html>
