@@ -35,6 +35,7 @@ The north star — the smallest end-to-end slice whose delivery proves the produ
 | S-01 | attraction-browse-feed    | browse and filter Kraków attractions without signing in                               | F-01          | FR-003, FR-004                 | done        |
 | S-02 | browse-first-save         | save an attraction; if anonymous, complete auth gate without losing the selection     | S-01          | FR-001, FR-002, FR-005, US-01  | done     |
 | S-03 | operator-content-refresh  | (operator) manually trigger a refresh of Kraków attraction listings                   | S-01          | FR-009                         | blocked  |
+| S-05 | login-logout-button       | see their auth state and log in or out from any page via a persistent header           | S-02          | FR-001, FR-002                 | new      |
 
 ## Streams
 
@@ -99,6 +100,18 @@ What's already in place in the codebase as of 2026-05-29 (auto-researched + user
 - **Risk:** This is the north star slice — US-01 acceptance criteria complete here. The riskiest criterion is "save completes without losing the selected attraction" across the auth redirect boundary; browse-first patterns most commonly break at that hand-off.
 - **Status:** done
 
+### S-05: Login/logout button
+
+- **Outcome:** any user can see their auth state and log in or out from any page — anonymous users see a "Login" link in a persistent header; authenticated users see "Hi, [username]" and a Logout button.
+- **Change ID:** login-logout-button
+- **PRD refs:** FR-001, FR-002
+- **Prerequisites:** S-02 (auth views, URLs, and session handling fully in place)
+- **Parallel with:** S-03
+- **Blockers:** —
+- **Unknowns:** —
+- **Risk:** Low — purely a template change to `base.html`; all auth infrastructure exists. One non-obvious constraint: Django 6.0.5 `LogoutView` requires POST (a plain anchor link returns 405).
+- **Status:** new
+
 ### S-03: Operator attraction refresh
 
 - **Outcome:** the operator can manually trigger a refresh of Kraków attraction listings from local websites, updating the corpus that users browse in the app.
@@ -120,6 +133,7 @@ What's already in place in the codebase as of 2026-05-29 (auto-researched + user
 | S-01       | attraction-browse-feed   | Browse and filter Kraków attractions (anonymous)    | —                     | Done — impl-reviewed 2026-06-04 |
 | S-02       | browse-first-save        | Save attraction with browse-first auth gate         | —                     | Done — impl-reviewed + tests green 2026-06-12 |
 | S-03       | operator-content-refresh | Operator manual attraction data refresh             | no                    | Blocked — resolve content acquisition Unknown first |
+| S-05       | login-logout-button      | Persistent header with login/logout auth state      | yes                   | Ready for planning + implementation |
 
 ## Open Roadmap Questions
 
