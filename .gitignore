@@ -24,10 +24,19 @@ Thumbs.db
 mutants/
 .mutmut-cache
 
+# Node / Playwright
+node_modules/
+test-results/
+playwright-report/
+
 # Claude / AI tooling
 .claude/
 CLAUDE.md
 AGENTS.md
-.agents
+.agents/
 skills-lock.json
 bash.exe.stackdump
+.playwright-cli/
+users.txt
+test-commands.txt
+auth.json
