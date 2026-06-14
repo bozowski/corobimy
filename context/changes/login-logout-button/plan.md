@@ -95,13 +95,13 @@ Insert a slim `<header>` element into `base.html` that renders on every page. Ap
 
 #### Automated
 
-- [x] 1.1 Django system check passes (`python manage.py check`)
-- [x] 1.2 Lint passes
+- [x] 1.1 Django system check passes (`python manage.py check`) — 6e7ac8a
+- [x] 1.2 Lint passes — 6e7ac8a
 
 #### Manual
 
-- [x] 1.3 Anonymous user sees Login link in header on any page
-- [x] 1.4 Login link includes `?next=` pre-filled to current URL
-- [x] 1.5 Authenticated user sees "Hi, [username]" and Logout button
-- [x] 1.6 Logout POSTs to `accounts/logout/` and logs user out
-- [x] 1.7 Header renders on login and register pages without regression
+- [x] 1.3 Anonymous user sees Login link in header on any page — 6e7ac8a
+- [x] 1.4 Login link includes `?next=` pre-filled to current URL — 6e7ac8a
+- [x] 1.5 Authenticated user sees "Hi, [username]" and Logout button — 6e7ac8a
+- [x] 1.6 Logout POSTs to `accounts/logout/` and logs user out — 6e7ac8a
+- [x] 1.7 Header renders on login and register pages without regression — 6e7ac8a
