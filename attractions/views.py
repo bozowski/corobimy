@@ -47,3 +47,19 @@ def save_attraction(request, pk):
     attraction = get_object_or_404(Attraction, pk=pk)
     UserSavedAttraction.objects.get_or_create(user=request.user, attraction=attraction)
     return redirect("attraction-list")
+
+
+@login_required
+def unsave_attraction(request, pk):
+    attraction = get_object_or_404(Attraction, pk=pk)
+    UserSavedAttraction.objects.filter(user=request.user, attraction=attraction).delete()
+    if request.htmx:
+        return render(
+            request,
+            "attractions/partials/save_button.html",
+            {
+                "attraction": attraction,
+                "saved_pks": set(),
+            },
+        )
+    return redirect("attraction-list")

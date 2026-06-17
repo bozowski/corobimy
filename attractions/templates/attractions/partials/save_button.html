@@ -1,0 +1,17 @@
+{% if attraction.pk in saved_pks %}
+  <button
+    hx-post="{% url 'attraction-unsave' attraction.pk %}"
+    hx-target="#save-btn-{{ attraction.pk }}"
+    hx-swap="innerHTML"
+    class="text-sm text-green-600 font-medium cursor-pointer hover:text-green-800"
+    type="button"
+  >Saved ✓</button>
+{% else %}
+  <form method="post" action="{% url 'attraction-save' attraction.pk %}">
+    {% csrf_token %}
+    <button type="submit"
+            class="text-sm px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors">
+      Save
+    </button>
+  </form>
+{% endif %}
