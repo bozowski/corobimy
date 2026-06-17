@@ -215,28 +215,28 @@ All tests in `attractions/tests.py` and `corobimy/tests.py` — particularly `At
 
 #### Automated
 
-- [x] 1.1 System check passes (`uv run python manage.py check`)
-- [x] 1.2 All tests pass including new `UnsaveViewTest` (`uv run python manage.py test`)
+- [x] 1.1 System check passes (`uv run python manage.py check`) — bd8dbf4
+- [x] 1.2 All tests pass including new `UnsaveViewTest` (`uv run python manage.py test`) — bd8dbf4
 
 #### Manual
 
-- [x] 1.3 Authenticated HTMX POST to `/attractions/1/unsave/` returns Save form fragment; DB row deleted
-- [x] 1.4 Idempotent: HTMX POST when not saved → 200, Save form returned
-- [x] 1.5 Anonymous POST → 302 to `/accounts/login/?next=...`
-- [x] 1.6 Invalid pk → 404
+- [x] 1.3 Authenticated HTMX POST to `/attractions/1/unsave/` returns Save form fragment; DB row deleted — bd8dbf4
+- [x] 1.4 Idempotent: HTMX POST when not saved → 200, Save form returned — bd8dbf4
+- [x] 1.5 Anonymous POST → 302 to `/accounts/login/?next=...` — bd8dbf4
+- [x] 1.6 Invalid pk → 404 — bd8dbf4
 
 ### Phase 2: Save Button Partial — Template Wiring
 
 #### Automated
 
-- [ ] 2.1 All tests pass (`uv run python manage.py test`)
-- [ ] 2.2 System check passes (`uv run python manage.py check`)
+- [x] 2.1 All tests pass (`uv run python manage.py test`)
+- [x] 2.2 System check passes (`uv run python manage.py check`)
 
 #### Manual
 
-- [ ] 2.3 "Saved ✓" renders as a clickable button on saved cards
-- [ ] 2.4 Click "Saved ✓" → in-place HTMX swap to "Save" button; DB row gone
-- [ ] 2.5 Click "Save" (after unsave) → plain POST + redirect; card shows "Saved ✓" again
-- [ ] 2.6 Load-more cards show correct button state
-- [ ] 2.7 Filter (HTMX swap) shows correct button state
-- [ ] 2.8 No regression in filter, load-more, empty state, or category display
+- [x] 2.3 "Saved ✓" renders as a clickable button on saved cards
+- [x] 2.4 Click "Saved ✓" → in-place HTMX swap to "Save" button; DB row gone
+- [x] 2.5 Click "Save" (after unsave) → plain POST + redirect; card shows "Saved ✓" again
+- [x] 2.6 Load-more cards show correct button state
+- [x] 2.7 Filter (HTMX swap) shows correct button state
+- [x] 2.8 No regression in filter, load-more, empty state, or category display
