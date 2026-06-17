@@ -229,14 +229,14 @@ All tests in `attractions/tests.py` and `corobimy/tests.py` — particularly `At
 
 #### Automated
 
-- [x] 2.1 All tests pass (`uv run python manage.py test`)
-- [x] 2.2 System check passes (`uv run python manage.py check`)
+- [x] 2.1 All tests pass (`uv run python manage.py test`) — 5492ad5
+- [x] 2.2 System check passes (`uv run python manage.py check`) — 5492ad5
 
 #### Manual
 
-- [x] 2.3 "Saved ✓" renders as a clickable button on saved cards
-- [x] 2.4 Click "Saved ✓" → in-place HTMX swap to "Save" button; DB row gone
-- [x] 2.5 Click "Save" (after unsave) → plain POST + redirect; card shows "Saved ✓" again
-- [x] 2.6 Load-more cards show correct button state
-- [x] 2.7 Filter (HTMX swap) shows correct button state
-- [x] 2.8 No regression in filter, load-more, empty state, or category display
+- [x] 2.3 "Saved ✓" renders as a clickable button on saved cards — 5492ad5
+- [x] 2.4 Click "Saved ✓" → in-place HTMX swap to "Save" button; DB row gone — 5492ad5
+- [x] 2.5 Click "Save" (after unsave) → plain POST + redirect; card shows "Saved ✓" again — 5492ad5
+- [x] 2.6 Load-more cards show correct button state — 5492ad5
+- [x] 2.7 Filter (HTMX swap) shows correct button state — 5492ad5
+- [x] 2.8 No regression in filter, load-more, empty state, or category display — 5492ad5
