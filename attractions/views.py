@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
+from django.views.decorators.http import require_POST
 
 from attractions.filters import AttractionFilter
 from attractions.models import Attraction, UserSavedAttraction
@@ -46,4 +47,21 @@ def save_attraction(request, pk):
     # then Django sends a GET back here after auth — get_or_create makes both methods safe.
     attraction = get_object_or_404(Attraction, pk=pk)
     UserSavedAttraction.objects.get_or_create(user=request.user, attraction=attraction)
+    return redirect("attraction-list")
+
+
+@require_POST
+@login_required
+def unsave_attraction(request, pk):
+    attraction = get_object_or_404(Attraction, pk=pk)
+    UserSavedAttraction.objects.filter(user=request.user, attraction=attraction).delete()
+    if request.htmx:
+        return render(
+            request,
+            "attractions/partials/save_button.html",
+            {
+                "attraction": attraction,
+                "saved_pks": set(),  # empty → partial renders the Save branch
+            },
+        )
     return redirect("attraction-list")

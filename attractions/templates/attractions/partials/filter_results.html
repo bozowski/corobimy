@@ -4,18 +4,8 @@
       <h2 class="text-lg font-semibold mb-1">{{ attraction.name }}</h2>
       <span class="text-xs uppercase tracking-wide text-gray-500 mb-2 block">{{ attraction.get_category_display }}</span>
       <p class="text-sm text-gray-700">{{ attraction.description }}</p>
-      <div class="mt-3">
-        {% if attraction.pk in saved_pks %}
-          <span class="text-sm text-green-600 font-medium">Saved ✓</span>
-        {% else %}
-          <form method="post" action="{% url 'attraction-save' attraction.pk %}">
-            {% csrf_token %}
-            <button type="submit"
-                    class="text-sm px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors">
-              Save
-            </button>
-          </form>
-        {% endif %}
+      <div class="mt-3" id="save-btn-{{ attraction.pk }}">
+        {% include "attractions/partials/save_button.html" %}
       </div>
     </div>
   {% empty %}
