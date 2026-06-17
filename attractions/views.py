@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
+from django.views.decorators.http import require_POST
 
 from attractions.filters import AttractionFilter
 from attractions.models import Attraction, UserSavedAttraction
@@ -49,6 +50,7 @@ def save_attraction(request, pk):
     return redirect("attraction-list")
 
 
+@require_POST
 @login_required
 def unsave_attraction(request, pk):
     attraction = get_object_or_404(Attraction, pk=pk)
@@ -59,7 +61,7 @@ def unsave_attraction(request, pk):
             "attractions/partials/save_button.html",
             {
                 "attraction": attraction,
-                "saved_pks": set(),
+                "saved_pks": set(),  # empty → partial renders the Save branch
             },
         )
     return redirect("attraction-list")
