@@ -3,7 +3,7 @@ project: corobimy
 version: 1
 status: draft
 created: 2026-05-29
-updated: 2026-06-04
+updated: 2026-06-18
 prd_version: 1
 main_goal: speed
 top_blocker: capacity
@@ -36,6 +36,7 @@ The north star — the smallest end-to-end slice whose delivery proves the produ
 | S-02 | browse-first-save         | save an attraction; if anonymous, complete auth gate without losing the selection     | S-01          | FR-001, FR-002, FR-005, US-01  | done     |
 | S-03 | operator-content-refresh  | (operator) manually trigger a refresh of Kraków attraction listings                   | S-01          | FR-009                         | blocked  |
 | S-05 | login-logout-button       | see their auth state and log in or out from any page via a persistent header           | S-02          | FR-001, FR-002                 | new      |
+| S-06 | unsave-attraction         | remove a previously saved attraction from the browse feed                             | S-02          | FR-005                         | done     |
 
 ## Streams
 
@@ -112,6 +113,18 @@ What's already in place in the codebase as of 2026-05-29 (auto-researched + user
 - **Risk:** Low — purely a template change to `base.html`; all auth infrastructure exists. One non-obvious constraint: Django 6.0.5 `LogoutView` requires POST (a plain anchor link returns 405).
 - **Status:** new
 
+### S-06: Unsave attraction
+
+- **Outcome:** a logged-in user can click "Saved ✓" on any attraction card to remove the save in place — HTMX swaps the button back to "Save" without a full page reload.
+- **Change ID:** unsave-attraction
+- **PRD refs:** FR-005
+- **Prerequisites:** S-02 (UserSavedAttraction model, saved_pks context, auth wiring all in place)
+- **Parallel with:** S-05
+- **Blockers:** —
+- **Unknowns:** —
+- **Risk:** Low — purely additive on top of the existing save infrastructure. No model changes or migrations required.
+- **Status:** done
+
 ### S-03: Operator attraction refresh
 
 - **Outcome:** the operator can manually trigger a refresh of Kraków attraction listings from local websites, updating the corpus that users browse in the app.
@@ -132,6 +145,7 @@ What's already in place in the codebase as of 2026-05-29 (auto-researched + user
 | F-01       | railway-deploy-skeleton  | Wire Railway + Postgres, /health/ endpoint, logging | —                     | Done — archived via `/10x-archive` |
 | S-01       | attraction-browse-feed   | Browse and filter Kraków attractions (anonymous)    | —                     | Done — impl-reviewed 2026-06-04 |
 | S-02       | browse-first-save        | Save attraction with browse-first auth gate         | —                     | Done — impl-reviewed + tests green 2026-06-12 |
+| S-06       | unsave-attraction        | Unsave a previously saved attraction (HTMX in-place) | —                    | Done — impl-reviewed 2026-06-18 (COR-11) |
 | S-03       | operator-content-refresh | Operator manual attraction data refresh             | no                    | Blocked — resolve content acquisition Unknown first |
 | S-05       | login-logout-button      | Persistent header with login/logout auth state      | yes                   | Ready for planning + implementation |
 
@@ -157,3 +171,4 @@ What's already in place in the codebase as of 2026-05-29 (auto-researched + user
 | F-01 | railway-deploy-skeleton | Django live on Railway, Postgres wired, /health/ endpoint, errors logged to stdout    | 2026-05-30 |
 | S-01 | attraction-browse-feed  | Anonymous browse + HTMX category filter + load-more, 12 seeded Kraków attractions     | 2026-06-04 |
 | S-02 | browse-first-save       | Save attraction with browse-first auth gate; critical-path tests green                | 2026-06-12 |
+| S-06 | unsave-attraction       | HTMX in-place unsave; save_button partial; @require_POST guard; impl-reviewed (COR-11) | 2026-06-18 |
